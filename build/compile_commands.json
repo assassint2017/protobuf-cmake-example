@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/Users/didi/Desktop/test/proto_test/build",
+  "command": "/usr/bin/clang++  -I/usr/local/include -I/Users/didi/Desktop/test/proto_test/build -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++11 -o CMakeFiles/read_data.dir/src/reader.cpp.o -c /Users/didi/Desktop/test/proto_test/src/reader.cpp",
+  "file": "/Users/didi/Desktop/test/proto_test/src/reader.cpp"
+},
+{
+  "directory": "/Users/didi/Desktop/test/proto_test/build",
+  "command": "/usr/bin/clang++  -I/usr/local/include -I/Users/didi/Desktop/test/proto_test/build -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++11 -o CMakeFiles/write_data.dir/src/writter.cpp.o -c /Users/didi/Desktop/test/proto_test/src/writter.cpp",
+  "file": "/Users/didi/Desktop/test/proto_test/src/writter.cpp"
+},
+{
+  "directory": "/Users/didi/Desktop/test/proto_test/build/proto",
+  "command": "/usr/bin/clang++  -I/usr/local/include -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++11 -o CMakeFiles/proto.dir/test.pb.cc.o -c /Users/didi/Desktop/test/proto_test/build/proto/test.pb.cc",
+  "file": "/Users/didi/Desktop/test/proto_test/build/proto/test.pb.cc"
+}
+]

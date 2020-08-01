@@ -1,0 +1,7 @@
+/Users/didi/Desktop/test/proto_test/build/CMakeFiles/rebuild_cache.dir
+/Users/didi/Desktop/test/proto_test/build/CMakeFiles/edit_cache.dir
+/Users/didi/Desktop/test/proto_test/build/CMakeFiles/read_data.dir
+/Users/didi/Desktop/test/proto_test/build/CMakeFiles/write_data.dir
+/Users/didi/Desktop/test/proto_test/build/proto/CMakeFiles/rebuild_cache.dir
+/Users/didi/Desktop/test/proto_test/build/proto/CMakeFiles/edit_cache.dir
+/Users/didi/Desktop/test/proto_test/build/proto/CMakeFiles/proto.dir

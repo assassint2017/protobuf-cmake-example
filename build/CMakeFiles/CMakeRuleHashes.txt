@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+9054b406e2f862648de5d479960b0b9e proto/test.pb.h
