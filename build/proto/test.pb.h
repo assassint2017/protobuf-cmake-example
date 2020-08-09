@@ -31,6 +31,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -47,7 +48,7 @@ struct TableStruct_test_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -58,13 +59,206 @@ namespace zcy {
 class helloworld;
 class helloworldDefaultTypeInternal;
 extern helloworldDefaultTypeInternal _helloworld_default_instance_;
+class helloworld_submessage;
+class helloworld_submessageDefaultTypeInternal;
+extern helloworld_submessageDefaultTypeInternal _helloworld_submessage_default_instance_;
 }  // namespace zcy
 PROTOBUF_NAMESPACE_OPEN
 template<> ::zcy::helloworld* Arena::CreateMaybeMessage<::zcy::helloworld>(Arena*);
+template<> ::zcy::helloworld_submessage* Arena::CreateMaybeMessage<::zcy::helloworld_submessage>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace zcy {
 
+enum helloworld_weekday : int {
+  helloworld_weekday_monday = 0,
+  helloworld_weekday_sunday = 2,
+  helloworld_weekday_helloworld_weekday_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::min(),
+  helloworld_weekday_helloworld_weekday_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<::PROTOBUF_NAMESPACE_ID::int32>::max()
+};
+bool helloworld_weekday_IsValid(int value);
+constexpr helloworld_weekday helloworld_weekday_weekday_MIN = helloworld_weekday_monday;
+constexpr helloworld_weekday helloworld_weekday_weekday_MAX = helloworld_weekday_sunday;
+constexpr int helloworld_weekday_weekday_ARRAYSIZE = helloworld_weekday_weekday_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* helloworld_weekday_descriptor();
+template<typename T>
+inline const std::string& helloworld_weekday_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, helloworld_weekday>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function helloworld_weekday_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    helloworld_weekday_descriptor(), enum_t_value);
+}
+inline bool helloworld_weekday_Parse(
+    const std::string& name, helloworld_weekday* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<helloworld_weekday>(
+    helloworld_weekday_descriptor(), name, value);
+}
 // ===================================================================
+
+class helloworld_submessage PROTOBUF_FINAL :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:zcy.helloworld.submessage) */ {
+ public:
+  inline helloworld_submessage() : helloworld_submessage(nullptr) {};
+  virtual ~helloworld_submessage();
+
+  helloworld_submessage(const helloworld_submessage& from);
+  helloworld_submessage(helloworld_submessage&& from) noexcept
+    : helloworld_submessage() {
+    *this = ::std::move(from);
+  }
+
+  inline helloworld_submessage& operator=(const helloworld_submessage& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline helloworld_submessage& operator=(helloworld_submessage&& from) noexcept {
+    if (GetArena() == from.GetArena()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const helloworld_submessage& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const helloworld_submessage* internal_default_instance() {
+    return reinterpret_cast<const helloworld_submessage*>(
+               &_helloworld_submessage_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(helloworld_submessage& a, helloworld_submessage& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(helloworld_submessage* other) {
+    if (other == this) return;
+    if (GetArena() == other->GetArena()) {
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(helloworld_submessage* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline helloworld_submessage* New() const final {
+    return CreateMaybeMessage<helloworld_submessage>(nullptr);
+  }
+
+  helloworld_submessage* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<helloworld_submessage>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const helloworld_submessage& from);
+  void MergeFrom(const helloworld_submessage& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* _InternalSerialize(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(helloworld_submessage* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "zcy.helloworld.submessage";
+  }
+  protected:
+  explicit helloworld_submessage(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_test_2eproto);
+    return ::descriptor_table_test_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kNameFieldNumber = 2,
+    kAgeFieldNumber = 1,
+  };
+  // string name = 2;
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  std::string* unsafe_arena_release_name();
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_name(
+      std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
+  // int32 age = 1;
+  void clear_age();
+  ::PROTOBUF_NAMESPACE_ID::int32 age() const;
+  void set_age(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_age() const;
+  void _internal_set_age(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:zcy.helloworld.submessage)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::int32 age_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_test_2eproto;
+};
+// -------------------------------------------------------------------
 
 class helloworld PROTOBUF_FINAL :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:zcy.helloworld) */ {
@@ -108,7 +302,7 @@ class helloworld PROTOBUF_FINAL :
                &_helloworld_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   friend void swap(helloworld& a, helloworld& b) {
     a.Swap(&b);
@@ -176,12 +370,68 @@ class helloworld PROTOBUF_FINAL :
 
   // nested types ----------------------------------------------------
 
+  typedef helloworld_submessage submessage;
+
+  typedef helloworld_weekday weekday;
+  static constexpr weekday monday =
+    helloworld_weekday_monday;
+  static constexpr weekday sunday =
+    helloworld_weekday_sunday;
+  static inline bool weekday_IsValid(int value) {
+    return helloworld_weekday_IsValid(value);
+  }
+  static constexpr weekday weekday_MIN =
+    helloworld_weekday_weekday_MIN;
+  static constexpr weekday weekday_MAX =
+    helloworld_weekday_weekday_MAX;
+  static constexpr int weekday_ARRAYSIZE =
+    helloworld_weekday_weekday_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  weekday_descriptor() {
+    return helloworld_weekday_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& weekday_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, weekday>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function weekday_Name.");
+    return helloworld_weekday_Name(enum_t_value);
+  }
+  static inline bool weekday_Parse(const std::string& name,
+      weekday* value) {
+    return helloworld_weekday_Parse(name, value);
+  }
+
   // accessors -------------------------------------------------------
 
   enum : int {
-    kStudentNameFieldNumber = 2,
     kSchoolIdFieldNumber = 1,
+    kStudentNameFieldNumber = 2,
+    kSubmessFieldNumber = 4,
+    kDayFieldNumber = 3,
   };
+  // repeated int32 school_id = 1;
+  int school_id_size() const;
+  private:
+  int _internal_school_id_size() const;
+  public:
+  void clear_school_id();
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_school_id(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      _internal_school_id() const;
+  void _internal_add_school_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      _internal_mutable_school_id();
+  public:
+  ::PROTOBUF_NAMESPACE_ID::int32 school_id(int index) const;
+  void set_school_id(int index, ::PROTOBUF_NAMESPACE_ID::int32 value);
+  void add_school_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+      school_id() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+      mutable_school_id();
+
   // string student_name = 2;
   void clear_student_name();
   const std::string& student_name() const;
@@ -207,13 +457,31 @@ class helloworld PROTOBUF_FINAL :
   std::string* _internal_mutable_student_name();
   public:
 
-  // int32 school_id = 1;
-  void clear_school_id();
-  ::PROTOBUF_NAMESPACE_ID::int32 school_id() const;
-  void set_school_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  // .zcy.helloworld.submessage submess = 4;
+  bool has_submess() const;
   private:
-  ::PROTOBUF_NAMESPACE_ID::int32 _internal_school_id() const;
-  void _internal_set_school_id(::PROTOBUF_NAMESPACE_ID::int32 value);
+  bool _internal_has_submess() const;
+  public:
+  void clear_submess();
+  const ::zcy::helloworld_submessage& submess() const;
+  ::zcy::helloworld_submessage* release_submess();
+  ::zcy::helloworld_submessage* mutable_submess();
+  void set_allocated_submess(::zcy::helloworld_submessage* submess);
+  private:
+  const ::zcy::helloworld_submessage& _internal_submess() const;
+  ::zcy::helloworld_submessage* _internal_mutable_submess();
+  public:
+  void unsafe_arena_set_allocated_submess(
+      ::zcy::helloworld_submessage* submess);
+  ::zcy::helloworld_submessage* unsafe_arena_release_submess();
+
+  // .zcy.helloworld.weekday day = 3;
+  void clear_day();
+  ::zcy::helloworld_weekday day() const;
+  void set_day(::zcy::helloworld_weekday value);
+  private:
+  ::zcy::helloworld_weekday _internal_day() const;
+  void _internal_set_day(::zcy::helloworld_weekday value);
   public:
 
   // @@protoc_insertion_point(class_scope:zcy.helloworld)
@@ -223,8 +491,11 @@ class helloworld PROTOBUF_FINAL :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 > school_id_;
+  mutable std::atomic<int> _school_id_cached_byte_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr student_name_;
-  ::PROTOBUF_NAMESPACE_ID::int32 school_id_;
+  ::zcy::helloworld_submessage* submess_;
+  int day_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_test_2eproto;
 };
@@ -237,26 +508,158 @@ class helloworld PROTOBUF_FINAL :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// helloworld_submessage
+
+// int32 age = 1;
+inline void helloworld_submessage::clear_age() {
+  age_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 helloworld_submessage::_internal_age() const {
+  return age_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 helloworld_submessage::age() const {
+  // @@protoc_insertion_point(field_get:zcy.helloworld.submessage.age)
+  return _internal_age();
+}
+inline void helloworld_submessage::_internal_set_age(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  age_ = value;
+}
+inline void helloworld_submessage::set_age(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_age(value);
+  // @@protoc_insertion_point(field_set:zcy.helloworld.submessage.age)
+}
+
+// string name = 2;
+inline void helloworld_submessage::clear_name() {
+  name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& helloworld_submessage::name() const {
+  // @@protoc_insertion_point(field_get:zcy.helloworld.submessage.name)
+  return _internal_name();
+}
+inline void helloworld_submessage::set_name(const std::string& value) {
+  _internal_set_name(value);
+  // @@protoc_insertion_point(field_set:zcy.helloworld.submessage.name)
+}
+inline std::string* helloworld_submessage::mutable_name() {
+  // @@protoc_insertion_point(field_mutable:zcy.helloworld.submessage.name)
+  return _internal_mutable_name();
+}
+inline const std::string& helloworld_submessage::_internal_name() const {
+  return name_.Get();
+}
+inline void helloworld_submessage::_internal_set_name(const std::string& value) {
+  
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void helloworld_submessage::set_name(std::string&& value) {
+  
+  name_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:zcy.helloworld.submessage.name)
+}
+inline void helloworld_submessage::set_name(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:zcy.helloworld.submessage.name)
+}
+inline void helloworld_submessage::set_name(const char* value,
+    size_t size) {
+  
+  name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:zcy.helloworld.submessage.name)
+}
+inline std::string* helloworld_submessage::_internal_mutable_name() {
+  
+  return name_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* helloworld_submessage::release_name() {
+  // @@protoc_insertion_point(field_release:zcy.helloworld.submessage.name)
+  return name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void helloworld_submessage::set_allocated_name(std::string* name) {
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), name,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:zcy.helloworld.submessage.name)
+}
+inline std::string* helloworld_submessage::unsafe_arena_release_name() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:zcy.helloworld.submessage.name)
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  
+  return name_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      GetArena());
+}
+inline void helloworld_submessage::unsafe_arena_set_allocated_name(
+    std::string* name) {
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  if (name != nullptr) {
+    
+  } else {
+    
+  }
+  name_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      name, GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:zcy.helloworld.submessage.name)
+}
+
+// -------------------------------------------------------------------
+
 // helloworld
 
-// int32 school_id = 1;
-inline void helloworld::clear_school_id() {
-  school_id_ = 0;
+// repeated int32 school_id = 1;
+inline int helloworld::_internal_school_id_size() const {
+  return school_id_.size();
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 helloworld::_internal_school_id() const {
+inline int helloworld::school_id_size() const {
+  return _internal_school_id_size();
+}
+inline void helloworld::clear_school_id() {
+  school_id_.Clear();
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 helloworld::_internal_school_id(int index) const {
+  return school_id_.Get(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 helloworld::school_id(int index) const {
+  // @@protoc_insertion_point(field_get:zcy.helloworld.school_id)
+  return _internal_school_id(index);
+}
+inline void helloworld::set_school_id(int index, ::PROTOBUF_NAMESPACE_ID::int32 value) {
+  school_id_.Set(index, value);
+  // @@protoc_insertion_point(field_set:zcy.helloworld.school_id)
+}
+inline void helloworld::_internal_add_school_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  school_id_.Add(value);
+}
+inline void helloworld::add_school_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_add_school_id(value);
+  // @@protoc_insertion_point(field_add:zcy.helloworld.school_id)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+helloworld::_internal_school_id() const {
   return school_id_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::int32 helloworld::school_id() const {
-  // @@protoc_insertion_point(field_get:zcy.helloworld.school_id)
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >&
+helloworld::school_id() const {
+  // @@protoc_insertion_point(field_list:zcy.helloworld.school_id)
   return _internal_school_id();
 }
-inline void helloworld::_internal_set_school_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  
-  school_id_ = value;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+helloworld::_internal_mutable_school_id() {
+  return &school_id_;
 }
-inline void helloworld::set_school_id(::PROTOBUF_NAMESPACE_ID::int32 value) {
-  _internal_set_school_id(value);
-  // @@protoc_insertion_point(field_set:zcy.helloworld.school_id)
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
+helloworld::mutable_school_id() {
+  // @@protoc_insertion_point(field_mutable_list:zcy.helloworld.school_id)
+  return _internal_mutable_school_id();
 }
 
 // string student_name = 2;
@@ -340,13 +743,126 @@ inline void helloworld::unsafe_arena_set_allocated_student_name(
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:zcy.helloworld.student_name)
 }
 
+// .zcy.helloworld.weekday day = 3;
+inline void helloworld::clear_day() {
+  day_ = 0;
+}
+inline ::zcy::helloworld_weekday helloworld::_internal_day() const {
+  return static_cast< ::zcy::helloworld_weekday >(day_);
+}
+inline ::zcy::helloworld_weekday helloworld::day() const {
+  // @@protoc_insertion_point(field_get:zcy.helloworld.day)
+  return _internal_day();
+}
+inline void helloworld::_internal_set_day(::zcy::helloworld_weekday value) {
+  
+  day_ = value;
+}
+inline void helloworld::set_day(::zcy::helloworld_weekday value) {
+  _internal_set_day(value);
+  // @@protoc_insertion_point(field_set:zcy.helloworld.day)
+}
+
+// .zcy.helloworld.submessage submess = 4;
+inline bool helloworld::_internal_has_submess() const {
+  return this != internal_default_instance() && submess_ != nullptr;
+}
+inline bool helloworld::has_submess() const {
+  return _internal_has_submess();
+}
+inline void helloworld::clear_submess() {
+  if (GetArena() == nullptr && submess_ != nullptr) {
+    delete submess_;
+  }
+  submess_ = nullptr;
+}
+inline const ::zcy::helloworld_submessage& helloworld::_internal_submess() const {
+  const ::zcy::helloworld_submessage* p = submess_;
+  return p != nullptr ? *p : *reinterpret_cast<const ::zcy::helloworld_submessage*>(
+      &::zcy::_helloworld_submessage_default_instance_);
+}
+inline const ::zcy::helloworld_submessage& helloworld::submess() const {
+  // @@protoc_insertion_point(field_get:zcy.helloworld.submess)
+  return _internal_submess();
+}
+inline void helloworld::unsafe_arena_set_allocated_submess(
+    ::zcy::helloworld_submessage* submess) {
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(submess_);
+  }
+  submess_ = submess;
+  if (submess) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:zcy.helloworld.submess)
+}
+inline ::zcy::helloworld_submessage* helloworld::release_submess() {
+  auto temp = unsafe_arena_release_submess();
+  if (GetArena() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+  return temp;
+}
+inline ::zcy::helloworld_submessage* helloworld::unsafe_arena_release_submess() {
+  // @@protoc_insertion_point(field_release:zcy.helloworld.submess)
+  
+  ::zcy::helloworld_submessage* temp = submess_;
+  submess_ = nullptr;
+  return temp;
+}
+inline ::zcy::helloworld_submessage* helloworld::_internal_mutable_submess() {
+  
+  if (submess_ == nullptr) {
+    auto* p = CreateMaybeMessage<::zcy::helloworld_submessage>(GetArena());
+    submess_ = p;
+  }
+  return submess_;
+}
+inline ::zcy::helloworld_submessage* helloworld::mutable_submess() {
+  // @@protoc_insertion_point(field_mutable:zcy.helloworld.submess)
+  return _internal_mutable_submess();
+}
+inline void helloworld::set_allocated_submess(::zcy::helloworld_submessage* submess) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArena();
+  if (message_arena == nullptr) {
+    delete submess_;
+  }
+  if (submess) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::GetArena(submess);
+    if (message_arena != submessage_arena) {
+      submess = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, submess, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  submess_ = submess;
+  // @@protoc_insertion_point(field_set_allocated:zcy.helloworld.submess)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
 }  // namespace zcy
+
+PROTOBUF_NAMESPACE_OPEN
+
+template <> struct is_proto_enum< ::zcy::helloworld_weekday> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::zcy::helloworld_weekday>() {
+  return ::zcy::helloworld_weekday_descriptor();
+}
+
+PROTOBUF_NAMESPACE_CLOSE
 
 // @@protoc_insertion_point(global_scope)
 

@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/usr/local/include
 
-CXX_FLAGS = -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++11
+CXX_FLAGS =  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++11
 

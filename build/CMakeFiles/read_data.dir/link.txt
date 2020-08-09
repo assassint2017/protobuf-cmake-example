@@ -1,1 +1,1 @@
-/usr/bin/clang++ -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/read_data.dir/src/reader.cpp.o -o read_data  proto/libproto.a /usr/local/lib/libprotobuf.dylib 
+/usr/bin/clang++  -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/read_data.dir/src/reader.cpp.o -o read_data  proto/libproto.a /usr/local/lib/libprotobuf.dylib 
